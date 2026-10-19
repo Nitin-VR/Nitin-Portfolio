@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of BE CSE Undergrad specializing in SDE, Quantitative Systems, and Applied AI/ML with Solid Crystal Glass UI & React Bits GooeyNav.">
+  <title>Portfolio | BE CSE Undergrad — SDE, Quants & AI</title>
+
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="SplitFlapText.css">
+  <link rel="stylesheet" href="IntroAnimation.css">
+  <link rel="stylesheet" href="GooeyNav.css">
+  <link rel="stylesheet" href="LogoLoop.css">
+  <link rel="stylesheet" href="DotField.css">
+  <link rel="stylesheet" href="ProfileCard.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- CRYSTAL BLACK & WHITE PORTFOLIO INTRO (REACT BITS SPLITFLAPTEXT) -->
+  <aside id="portfolio-intro" class="portfolio-intro" role="region" aria-label="Portfolio Introduction">
+    <div class="portfolio-intro__reflection" aria-hidden="true"></div>
+    <div class="portfolio-intro__content">
+      <div class="portfolio-intro__splitflap-wrap">
+        <div class="split-flap-text" id="intro-splitflap" aria-label="NITIN VR"
+          style="--split-flap-gap: 6px; --split-flap-radius: 5px; --split-flap-tile-color: #080808; --split-flap-text-color: #ffffff; --split-flap-flip-duration: 0.12s; --split-flap-glare: 0.12; --split-flap-depth: 0.7; --split-flap-lift: 0.7; --split-flap-hinge: 1px; --split-flap-hinge-shade: 0.65;">
+          <span class="split-flap-text__sr">NITIN VR</span>
+        </div>
+      </div>
+      <p id="intro-subtitle" class="portfolio-intro__subtitle">DEVELOPER · CREATOR · ENGINEER</p>
+    </div>
+    <div class="portfolio-intro__hint" aria-hidden="true">Click to skip</div>
+  </aside>
+
+  <!-- FLOATING TOP NAVIGATION BAR (REACT BITS GOOEYNAV) -->
+  <header class="floating-navbar">
+    <nav class="gooey-nav gooey-nav--md gooey-nav--framed" style="--gn-pill: #ffffff; --gn-active-ink: #000000;"
+      aria-label="Main Navigation">
+      <span class="gooey-nav__rim" aria-hidden="true"></span>
+
+      <!-- Brand Identifier: NITIN VR (Bebas Neue, Full Capital, No Dots) -->
+      <a href="#home" class="gooey-nav__brand" id="gooey-brand" title="NITIN VR — Back to Top">
+        <span class="gooey-nav__brand-text bebas">NITIN VR</span>
+      </a>
+      <span class="gooey-nav__brand-divider" aria-hidden="true"></span>
+
+      <div class="gooey-nav__stage" id="gooey-stage">
+        <canvas class="gooey-nav__canvas" id="gooey-canvas" aria-hidden="true"></canvas>
+        <span class="gooey-nav__fallback" id="gooey-fallback" aria-hidden="true"></span>
+
+        <!-- Standard Interactive Links -->
+        <ul class="gooey-nav__list" id="gooey-list">
+          <li class="gooey-nav__item" data-gooey-index="0" data-active>
+            <a href="#home" class="gooey-nav__link">Home</a>
+          </li>
+          <li class="gooey-nav__item" data-gooey-index="1">
+            <a href="#about" class="gooey-nav__link">About</a>
+          </li>
+          <li class="gooey-nav__item" data-gooey-index="2">
+            <a href="#projects" class="gooey-nav__link">Projects</a>
+          </li>
+          <li class="gooey-nav__item" data-gooey-index="3">
+            <a href="#skills" class="gooey-nav__link">Skills</a>
+          </li>
+          <li class="gooey-nav__item" data-gooey-index="4">
+            <a href="#experience" class="gooey-nav__link">Experience</a>
+          </li>
+          <li class="gooey-nav__item" data-gooey-index="5">
+            <a href="#contact" class="gooey-nav__link">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Active Pill Overlay Layer for Gooey Morphing Mask -->
+        <ul class="gooey-nav__list gooey-nav__list--active" id="gooey-overlay" aria-hidden="true">
+          <li class="gooey-nav__item"><span class="gooey-nav__link">Home</span></li>
+          <li class="gooey-nav__item"><span class="gooey-nav__link">About</span></li>
+          <li class="gooey-nav__item"><span class="gooey-nav__link">Projects</span></li>
+          <li class="gooey-nav__item"><span class="gooey-nav__link">Skills</span></li>
+          <li class="gooey-nav__item"><span class="gooey-nav__link">Experience</span></li>
+          <li class="gooey-nav__item"><span class="gooey-nav__link">Contact</span></li>
+        </ul>
+
+        <!-- Extra Action: Theme Switcher -->
+        <div class="gooey-nav__extra">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark and White Theme"
+            title="Toggle Theme">
+            <!-- Sun icon (shown in Dark mode to switch to Light) -->
+            <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <!-- Moon icon (shown in Light mode to switch to Dark) -->
+            <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="container">
+
+    <!-- 01. HOME SECTION -->
+    <header class="hero" id="home">
+      <!-- AMBIENT REACT BITS DOTFIELD COMPONENT (HERO BACKGROUND PATTERN) -->
+      <div class="hero-dotfield-wrap" aria-hidden="true">
+        <div class="dot-field" id="hero-dotfield">
+          <canvas class="dot-field__canvas" id="dotfield-canvas" aria-hidden="true"></canvas>
+        </div>
+      </div>
+
+      <div class="status-badge mono">
+        <span class="pulse-indicator">
+          <span class="pulse-dot"></span>
+          <span class="pulse-ring"></span>
+        </span>
+        BE CSE UNDERGRAD · OPEN TO OPPORTUNITIES
+      </div>
+
+      <h1>Engineering High-Performance Systems &amp; Intelligence.</h1>
+
+      <p class="hero-subtitle">
+        Computer Science &amp; Engineering undergraduate focusing on the intersection of Software Engineering (SDE),
+        Quantitative Systems, and Applied AI/ML.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="liquid-btn liquid-btn-primary">
+          <span>Explore Selected Work</span>
+          <span>↓</span>
+        </a>
+        <a href="#contact" class="liquid-btn liquid-btn-secondary">
+          <span>Get In Touch</span>
+          <span>→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- 02. ABOUT SECTION -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-number mono">01.</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-layout">
+        <!-- LEFT COLUMN: REACT BITS PROFILECARD (PHOTO ALONE) -->
+        <div class="about-card-col">
+          <div class="profile-card" id="portfolio-profile-card">
+            <div class="profile-card__body">
+              <div class="profile-card__tile">
+                <span class="profile-card__sheen"></span>
+                <span class="profile-card__holo">
+                  <span class="profile-card__holo-glow"></span>
+                  <span class="profile-card__holo-shift"></span>
+                </span>
+                <img class="profile-card__photo" src="profile.jpg" alt="Nitin VR" loading="lazy" draggable="false">
+                <span class="profile-card__tile-rim"></span>
+              </div>
+
+              <span class="profile-card__glare"></span>
+              <span class="profile-card__shade"></span>
+              <span class="profile-card__rim"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: BIO & ADJUSTED META BOXES -->
+        <div class="about-content-col">
+          <div class="glass-panel about-bio-panel">
+            <div class="about-bio-badge mono">
+              <span>●</span>
+              <span>TECHNICAL PROFILE &amp; FOCUS</span>
+            </div>
+            <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; color: var(--text-primary);">
+              I'm Nitin VR, a first-year student at Chennai Institute of Technology with a strong interest in software development, AI engineering, and building real-world systems.
+            </p>
+            <p style="font-size: 0.98rem; line-height: 1.75; color: var(--text-secondary);">
+              I enjoy exploring new technologies, solving problems through code, and turning ideas into practical solutions. I'm continuously learning and looking forward to developing innovative applications that make a meaningful impact.
+            </p>
+          </div>
+
+          <div class="meta-grid mono">
+            <div class="meta-item">
+              <span>FOCUS</span>
+              <strong>SDE / Quants / AI-ML</strong>
+            </div>
+            <div class="meta-item">
+              <span>DEGREE</span>
+              <strong>B.E. Computer Science</strong>
+            </div>
+            <div class="meta-item">
+              <span>STATUS</span>
+              <strong>Present - 2026</strong>
+            </div>
+            <div class="meta-item">
+              <span>LOCATION</span>
+              <strong>India</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. PROJECTS SECTION -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-number mono">02.</span>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+
+      <!-- MFX PROJECT CARD WITH SOLID CRYSTAL GLASS PANEL -->
+      <article class="glass-panel project-card">
+        <div class="project-header">
+          <div class="project-title-group">
+            <h3 class="project-title">MFX — Multi-Forex Exchange Platform</h3>
+            <span class="project-badge-live mono">● LIVE SIMULATION</span>
+          </div>
+          <div class="project-link-group">
+            <a href="https://mfx-multi-forex-exchange.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="project-link mono">
+              <span>Live Demo</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <p class="project-desc">
+          A high-performance multi-currency forex exchange platform built for real-time exchange rates conversion,
+          low-latency transaction simulations, and clean trade execution modeling with financial engineering primitives.
+        </p>
+
+        <!-- Project Performance Highlights -->
+        <div class="project-highlights mono">
+          <div class="highlight-box">
+            <span class="hl-value">&lt; 1.2ms</span>
+            <span class="hl-label">Avg Simulated Latency</span>
+          </div>
+          <div class="highlight-box">
+            <span class="hl-value">50+ Pairs</span>
+            <span class="hl-label">Real-Time FX Pairs</span>
+          </div>
+          <div class="highlight-box">
+            <span class="hl-value">99.9%</span>
+            <span class="hl-label">Tick Accuracy</span>
+          </div>
+        </div>
+
+        <div class="tag-row mono">
+          <span class="tag">TypeScript</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">Forex API</span>
+          <span class="tag">Financial Engineering</span>
+          <span class="tag">Algorithmic Trading</span>
+          <span class="tag">TailwindCSS</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- 04. SKILLS SECTION -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-number mono">03.</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+
+      <!-- Skills Categories Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        <div class="glass-panel" style="padding: 20px;">
+          <h4 class="mono"
+            style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 12px; text-transform: uppercase;">Core
+            Languages</h4>
+          <div class="tag-row mono">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="glass-panel" style="padding: 20px;">
+          <h4 class="mono"
+            style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 12px; text-transform: uppercase;">
+            Frameworks &amp; ML</h4>
+          <div class="tag-row mono">
+            <span class="tag">TensorFlow</span>
+            <span class="tag">Scikit-Learn</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Streamlit</span>
+          </div>
+        </div>
+        <div class="glass-panel" style="padding: 20px;">
+          <h4 class="mono"
+            style="font-size: 0.85rem; color: var(--accent-cyan); margin-bottom: 12px; text-transform: uppercase;">
+            Systems &amp; Architecture</h4>
+          <div class="tag-row mono">
+            <span class="tag">Low-Latency Compute</span>
+            <span class="tag">Data Structures &amp; Algorithms</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">Git</span>
+            <span class="tag">REST / WebSockets</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REACT BITS — ANIMATED LOGOLOOP (TECHNOLOGY STACK) -->
+      <div class="logoloop logoloop--horizontal logoloop--scale-hover" id="tech-logoloop" role="region"
+          aria-label="Technology Stack" style="--logoloop-gap: 36px; --logoloop-logoHeight: 30px;">
+          <div class="logoloop__track" id="logoloop-track">
+            <ul class="logoloop__list" role="list">
+              <!-- 1. Python -->
+              <li class="logoloop__item" role="listitem" data-tech="python" data-color style="--logoloop-item-color: #3776AB;">
+                <a class="logoloop__content" href="https://www.python.org/" target="_blank" rel="noreferrer noopener" aria-label="Python">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>Python</title>
+                      <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">Python</span>
+                </a>
+              </li>
+
+              <!-- 2. JavaScript -->
+              <li class="logoloop__item" role="listitem" data-tech="javascript" data-color style="--logoloop-item-color: #F7DF1E;">
+                <a class="logoloop__content" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer noopener" aria-label="JavaScript">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>JavaScript</title>
+                      <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">JavaScript</span>
+                </a>
+              </li>
+
+              <!-- 3. HTML5 -->
+              <li class="logoloop__item" role="listitem" data-tech="html5" data-color style="--logoloop-item-color: #E34F26;">
+                <a class="logoloop__content" href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noreferrer noopener" aria-label="HTML5">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>HTML5</title>
+                      <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">HTML5</span>
+                </a>
+              </li>
+
+              <!-- 4. CSS3 -->
+              <li class="logoloop__item" role="listitem" data-tech="css3" data-color style="--logoloop-item-color: #1572B6;">
+                <a class="logoloop__content" href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noreferrer noopener" aria-label="CSS3">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>CSS3</title>
+                      <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.411l.56 6.232h11.472l-.39 4.363-4.052 1.12-4.057-1.12-.265-3.005H5.048l.478 5.44 6.452 1.787 6.455-1.787 1.09-12.25z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">CSS3</span>
+                </a>
+              </li>
+
+              <!-- 5. Git -->
+              <li class="logoloop__item" role="listitem" data-tech="git" data-color style="--logoloop-item-color: #F05032;">
+                <a class="logoloop__content" href="https://git-scm.com/" target="_blank" rel="noreferrer noopener" aria-label="Git">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>Git</title>
+                      <path d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">Git</span>
+                </a>
+              </li>
+
+              <!-- 6. GitHub -->
+              <li class="logoloop__item" role="listitem" data-tech="github" data-color style="--logoloop-item-color: #181717;">
+                <a class="logoloop__content" href="https://github.com/Nitin-VR" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>GitHub</title>
+                      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">GitHub</span>
+                </a>
+              </li>
+
+              <!-- 7. LangChain -->
+              <li class="logoloop__item" role="listitem" data-tech="langchain" data-color style="--logoloop-item-color: #1C3C3C;">
+                <a class="logoloop__content" href="https://www.langchain.com/" target="_blank" rel="noreferrer noopener" aria-label="LangChain">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>LangChain</title>
+                      <path d="M37.7,79.9c7.1-7.1,11-16.6,11-26.6s-4-19.6-11-26.6L11,0C4,7.1,0,16.6,0,26.6s4,19.6,11,26.6l26.6,26.6h0Z"/>
+                      <path d="M93.4,82.3c-7.1-7.1-16.6-11-26.6-11s-19.6,4-26.6,11l26.6,26.6c7.1,7.1,16.6,11,26.6,11s19.6-4,26.6-11l-26.6-26.6h0Z"/>
+                      <path d="M11.1,108.9c7.1,7.1,16.6,11,26.6,11v-37.7H0c0,10,4,19.6,11,26.6Z"/>
+                      <path d="M103.7,43c-7.1-7.1-16.6-11-26.6-11-10,0-19.6,4-26.6,11l26.6,26.6,26.6-26.6Z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">LangChain</span>
+                </a>
+              </li>
+
+              <!-- 8. C++ -->
+              <li class="logoloop__item" role="listitem" data-tech="cplusplus" data-color style="--logoloop-item-color: #00599C;">
+                <a class="logoloop__content" href="https://isocpp.org/" target="_blank" rel="noreferrer noopener" aria-label="C++">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>C++</title>
+                      <path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">C++</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- REACT BITS -- ANIMATED LOGOLOOP 2 (AI/ML & DATA SCIENCE STACK) -->
+      <div class="logoloop logoloop--horizontal logoloop--scale-hover" id="aiml-logoloop" role="region"
+          aria-label="AI, ML &amp; Data Science Stack" style="--logoloop-gap: 36px; --logoloop-logoHeight: 30px; margin-top: 18px;">
+          <div class="logoloop__track" id="aiml-logoloop-track">
+            <ul class="logoloop__list" role="list">
+              <!-- 1. TensorFlow -->
+              <li class="logoloop__item" role="listitem" data-tech="tensorflow" data-color style="--logoloop-item-color: #FF6F00;">
+                <a class="logoloop__content" href="https://www.tensorflow.org/" target="_blank" rel="noreferrer noopener" aria-label="TensorFlow">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>TensorFlow</title>
+                      <path d="M1.292 5.856L11.54 0v24l-4.095-2.378V7.603l-6.168 3.564.015-5.31zm21.43 5.311l-.014-5.31L12.46 0v24l4.095-2.378V14.87l3.092 1.788-.018-4.618-3.074-1.756V7.603l6.168 3.564z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">TensorFlow</span>
+                </a>
+              </li>
+              <!-- 2. scikit-learn -->
+              <li class="logoloop__item" role="listitem" data-tech="scikitlearn" data-color style="--logoloop-item-color: #F7931E;">
+                <a class="logoloop__content" href="https://scikit-learn.org/" target="_blank" rel="noreferrer noopener" aria-label="scikit-learn">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>scikit-learn</title>
+                      <path d="M15.601 5.53c-1.91.035-3.981.91-5.63 2.56-2.93 2.93-2.083 8.53-1.088 9.525.805.804 6.595 1.843 9.526-1.088a9.74 9.74 0 0 0 .584-.643c.043-.292.205-.66.489-1.106a1.848 1.848 0 0 1-.537.176c-.144.265-.37.55-.676.855-.354.335-.607.554-.76.656a.795.795 0 0 1-.437.152c-.35 0-.514-.308-.494-.924-.22.316-.425.549-.612.7a.914.914 0 0 1-.578.224c-.194 0-.36-.09-.496-.273a1.03 1.03 0 0 1-.193-.507 4.016 4.016 0 0 1-.726.583c-.224.132-.47.197-.74.197-.3 0-.543-.096-.727-.288a.978.978 0 0 1-.257-.524v.004c-.3.276-.564.48-.79.611a1.295 1.295 0 0 1-.649.197.693.693 0 0 1-.571-.275c-.145-.183-.218-.43-.218-.739 0-.464.101-1.02.302-1.67.201-.65.445-1.25.733-1.797l.842-.312a.21.21 0 0 1 .06-.013c.063 0 .116.047.157.14.04.095.061.221.061.38 0 .451-.104.888-.312 1.31-.207.422-.532.873-.974 1.352-.018.23-.027.388-.027.474 0 .193.036.345.106.458.071.113.165.169.282.169a.71.71 0 0 0 .382-.13c.132-.084.333-.26.602-.523.028-.418.187-.798.482-1.142.324-.38.685-.569 1.08-.569.206 0 .37.054.494.16a.524.524 0 0 1 .186.417c0 .458-.486.829-1.459 1.114.088.43.32.646.693.646a.807.807 0 0 0 .417-.117c.129-.076.321-.243.575-.497.032-.252.118-.495.259-.728.182-.3.416-.544.701-.73.285-.185.537-.278.756-.278.276 0 .47.127.58.381l.677-.374h.186l-.292.971c-.15.488-.226.823-.226 1.004 0 .19.067.285.202.285.086 0 .181-.045.285-.137.104-.092.25-.232.437-.42v.001c.143-.155.274-.32.392-.494-.19-.084-.285-.21-.285-.375 0-.17.058-.352.174-.545.116-.194.275-.29.479-.29.172 0 .258.088.258.265 0 .139-.05.338-.149.596.367-.04.687-.32.961-.842l.228-.01c1.059-2.438.828-5.075-.83-6.732-1.019-1.02-2.408-1.5-3.895-1.471zm4.725 8.203a8.938 8.938 0 0 1-1.333 2.151 1.09 1.09 0 0 0-.012.147c0 .168.047.309.14.423.092.113.206.17.34.17.296 0 .714-.264 1.254-.787-.001.04-.003.08-.003.121 0 .146.012.368.036.666l.733-.172c0-.2.003-.357.01-.474.01-.157.033-.33.066-.517.02-.11.07-.216.152-.315l.186-.216a5.276 5.276 0 0 1 .378-.397c.062-.055.116-.099.162-.13a.26.26 0 0 1 .123-.046c.055 0 .083.035.083.106 0 .07-.052.236-.156.497-.194.486-.292.848-.292 1.084 0 .175.046.314.136.418a.45.45 0 0 0 .358.155c.365 0 .803-.269 1.313-.808v-.381c-.361.426-.623.64-.784.64-.109 0-.163-.067-.163-.2 0-.1.065-.316.195-.65.19-.486.285-.836.285-1.048a.464.464 0 0 0-.112-.319.36.36 0 0 0-.282-.127c-.165 0-.354.077-.567.233-.213.156-.5.436-.863.84.053-.262.165-.622.335-1.08l-.809.156a6.54 6.54 0 0 0-.399 1.074c-.04.156-.07.316-.092.48a7.447 7.447 0 0 1-.49.45.38.38 0 0 1-.229.08.208.208 0 0 1-.174-.082.352.352 0 0 1-.064-.222c0-.1.019-.214.056-.343.038-.13.12-.373.249-.731l.308-.849zm-17.21-2.927c-.863-.016-1.67.263-2.261.854-1.352 1.352-1.07 3.827.631 5.527 1.7 1.701 4.95 1.21 5.527.632.467-.466 1.07-3.827-.631-5.527-.957-.957-2.158-1.465-3.267-1.486zm12.285.358h.166v.21H15.4zm.427 0h.166v.865l.46-.455h.195l-.364.362.428.684h-.198l-.357-.575-.164.166v.41h-.166zm1.016 0h.166v.21h-.166zm.481.122h.166v.288h.172v.135h-.172v.717c0 .037.006.062.02.075.012.013.037.02.074.02a.23.23 0 0 0 .078-.01v.141a.802.802 0 0 1-.136.014.23.23 0 0 1-.15-.043.15.15 0 0 1-.052-.123v-.79h-.141v-.136h.141zm-3.562.258c.081 0 .15.012.207.038.057.024.1.061.13.11s.045.106.045.173h-.176c-.006-.111-.075-.167-.208-.167a.285.285 0 0 0-.164.041.134.134 0 0 0-.06.117c0 .035.015.065.045.088.03.024.08.044.15.06l.16.039a.47.47 0 0 1 .224.105c.047.046.07.108.07.186a.3.3 0 0 1-.052.175.327.327 0 0 1-.152.116.585.585 0 0 1-.226.041c-.136 0-.24-.03-.309-.088-.069-.059-.105-.149-.109-.269h.176c.004.037.01.065.017.084a.166.166 0 0 0 .034.054c.044.043.112.065.204.065a.31.31 0 0 0 .177-.045.139.139 0 0 0 .067-.119.116.116 0 0 0-.038-.09.287.287 0 0 0-.124-.055l-.156-.038a1.248 1.248 0 0 1-.159-.05.359.359 0 0 1-.098-.061.22.22 0 0 1-.058-.083.32.32 0 0 1-.016-.108c0-.096.036-.174.109-.232a.45.45 0 0 1 .29-.087zm1.035 0a.46.46 0 0 1 .202.043.351.351 0 0 1 .187.212.577.577 0 0 1 .023.126h-.168a.256.256 0 0 0-.078-.168.242.242 0 0 0-.17-.06.248.248 0 0 0-.155.05.306.306 0 0 0-.1.144.662.662 0 0 0-.034.224.58.58 0 0 0 .035.214.299.299 0 0 0 .101.135.261.261 0 0 0 .157.048c.142 0 .227-.084.256-.252h.167a.519.519 0 0 1-.065.22.35.35 0 0 1-.146.138.464.464 0 0 1-.216.048.448.448 0 0 1-.246-.066.441.441 0 0 1-.161-.192.703.703 0 0 1-.057-.293c0-.085.01-.163.032-.233a.522.522 0 0 1 .095-.182.403.403 0 0 1 .15-.117.453.453 0 0 1 .191-.04zm.603.03h.166v1.046H15.4zm1.443 0h.166v1.046h-.166zm-5.05.618c-.08 0-.2.204-.356.611-.155.407-.308.977-.459 1.71.281-.312.509-.662.683-1.05.175-.387.262-.72.262-.999a.455.455 0 0 0-.036-.197c-.025-.05-.056-.075-.093-.075zm4.662 1.797c-.221 0-.431.188-.629.563-.197.376-.296.722-.296 1.038 0 .12.029.216.088.29a.273.273 0 0 0 .223.111c.221 0 .43-.188.625-.565.196-.377.294-.725.294-1.043a.457.457 0 0 0-.083-.29.269.269 0 0 0-.222-.104zm-2.848.007c-.146 0-.285.11-.417.333-.133.222-.2.51-.2.866.566-.159.849-.452.849-.881 0-.212-.077-.318-.232-.318Z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">scikit-learn</span>
+                </a>
+              </li>
+              <!-- 3. pandas -->
+              <li class="logoloop__item" role="listitem" data-tech="pandas" data-color style="--logoloop-item-color: #150458;">
+                <a class="logoloop__content" href="https://pandas.pydata.org/" target="_blank" rel="noreferrer noopener" aria-label="pandas">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>pandas</title>
+                      <path d="M16.922 0h2.623v18.104h-2.623zm-4.126 12.94h2.623v2.57h-2.623zm0-7.037h2.623v5.446h-2.623zm0 11.197h2.623v5.446h-2.623zM4.456 5.896h2.622V24H4.455zm4.213 2.559h2.623v2.57H8.67zm0 4.151h2.623v5.447H8.67zm0-11.187h2.623v5.446H8.67Z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">pandas</span>
+                </a>
+              </li>
+              <!-- 4. NumPy -->
+              <li class="logoloop__item" role="listitem" data-tech="numpy" data-color style="--logoloop-item-color: #4DABCF;">
+                <a class="logoloop__content" href="https://numpy.org/" target="_blank" rel="noreferrer noopener" aria-label="NumPy">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>NumPy</title>
+                      <path d="M10.315 4.876L6.3048 2.8517l-4.401 2.1965 4.1186 2.0683zm1.8381.9277l4.2045 2.1223-4.3622 2.1906-4.125-2.0718zm5.6153-2.9213l4.3193 2.1658-3.863 1.9402-4.2131-2.1252zm-1.859-.9329L12.021 0 8.1742 1.9193l4.0068 2.0208zm-3.0401 16.7443V24l4.7107-2.3507-.0053-5.3085zm4.7037-4.2057l-.0052-5.2528-4.6985 2.3356v5.2546zm5.6553-.9845v5.327l-4.0178 2.0052-.0029-5.3028zm0-1.8626V6.4214l-4.0253 2.001.0034 5.2633zM11.2062 11.571L8.0333 9.9756v6.895s-3.8804-8.2564-4.2399-8.998c-.0463-.0957-.2371-.2007-.2858-.2262C2.8118 7.2812.773 6.2485.773 6.2485V18.43l2.8204 1.5076v-6.3674s3.8392 7.3775 3.878 7.458c.0389.0807.4245.8582.8362 1.1314.5485.363 2.8992 1.7766 2.8992 1.7766z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">NumPy</span>
+                </a>
+              </li>
+              <!-- 5. Matplotlib -->
+              <li class="logoloop__item" role="listitem" data-tech="matplotlib" data-color style="--logoloop-item-color: #11557C;">
+                <a class="logoloop__content" href="https://matplotlib.org/" target="_blank" rel="noreferrer noopener" aria-label="Matplotlib">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>Matplotlib</title>
+                      <g stroke="currentColor" stroke-width="2.5" fill="none">
+<circle cx="90" cy="90" r="86"/>
+<circle cx="90" cy="90" r="64"/>
+<circle cx="90" cy="90" r="42"/>
+<circle cx="90" cy="90" r="21"/>
+<path d="M90 4v172M151 29L29 151M151 151L29 29M176 90H4"/>
+</g>
+<g fill="currentColor" opacity="0.85">
+<path d="m90 90h18a18 18 0 0 0 0-5z"/>
+<path d="m90 90 34-43a55 55 0 0 0-15-8z"/>
+<path d="m90 90-16-72a74 74 0 0 0-31 15z"/>
+<path d="m90 90-58-28a65 65 0 0 0-5 39z"/>
+<path d="m90 90-33 16a37 37 0 0 0 2 5z"/>
+<path d="m90 90-10 45a46 46 0 0 0 18 0z"/>
+<path d="m90 90 46 58a74 74 0 0 0 12-12z"/>
+</g>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">Matplotlib</span>
+                </a>
+              </li>
+              <!-- 6. Streamlit -->
+              <li class="logoloop__item" role="listitem" data-tech="streamlit" data-color style="--logoloop-item-color: #FF4B4B;">
+                <a class="logoloop__content" href="https://streamlit.io/" target="_blank" rel="noreferrer noopener" aria-label="Streamlit">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>Streamlit</title>
+                      <path d="M16.673 11.32l6.862-3.618c.233-.136.554.12.442.387L20.463 17.1zm-8.556-.229l3.473-5.187c.203-.328.578-.316.793-.028l7.886 11.75zm-3.375 7.25c-.28 0-.835-.284-.993-.716l-3.72-9.46c-.118-.331.139-.614.48-.464l19.474 10.306c-.149.147-.453.337-.72.334z"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">Streamlit</span>
+                </a>
+              </li>
+              <!-- 7. Hugging Face -->
+              <li class="logoloop__item" role="listitem" data-tech="huggingface" data-color style="--logoloop-item-color: #FFD21E;">
+                <a class="logoloop__content" href="https://huggingface.co/" target="_blank" rel="noreferrer noopener" aria-label="Hugging Face">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>Hugging Face</title>
+                      <path d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056 3.522 2.064 1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">Hugging Face</span>
+                </a>
+              </li>
+              <!-- 8. Unsloth -->
+              <li class="logoloop__item" role="listitem" data-tech="unsloth" data-color style="--logoloop-item-color: #FF6600;">
+                <a class="logoloop__content" href="https://unsloth.ai/" target="_blank" rel="noreferrer noopener" aria-label="Unsloth">
+                  <span class="logoloop__node" aria-hidden="true">
+                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                      <title>Unsloth</title>
+                      <path d="m17.404 16.57-.044.046a.15.15 0 0 1-.074.042 9.6 9.6 0 0 0-1.756.62.13.13 0 0 1-.074.012l-.081-.01c-.326-.201-.786.303-.982.56l-.77.438q-.44-.52-.676-1.451-.052-.21-.335-.204c-.353.009-.86.495-1.133.78-.23.238-.606.585-.968.49a.15.15 0 0 1-.076-.047q-.195-.226-.235-.366c-.12-.401-.539-1.577-.981-1.601q-.154-.008-.346.195-.4.425-.522.561-.231.26-.341.297c-.944.316-.704-1.595-1.412-1.537-.399.032-.352.575-.342.888a.3.3 0 0 1-.05.174.3.3 0 0 1-.144.117c-.478.194-.728-.517-.805-.849A10.9 10.9 0 0 1 5 12.63a.043.043 0 0 0-.036-.045l-.003-.001a.05.05 0 0 0-.034.007.05.05 0 0 0-.02.03c-.043.16-.097.485-.29.532-.33.08-.38-.13-.377-.405.033-2.21.648-4.29 2.037-5.93 1.264-1.493 3.145-2.515 5.113-2.576l.588-.03a.5.5 0 0 0 .176-.042c.582-.256 1.805-.599 2.402-.305a.31.31 0 0 1 .165.34q-.01.042-.131.146-.06.052-.315.232a.04.04 0 0 0-.018.043.04.04 0 0 0 .033.033q.454.101.802.253c3.696 1.622 5.106 5.641 4.024 9.407q-.135.474-.395 1.194a1.5 1.5 0 0 1-.307.527.24.24 0 0 1-.147.077.23.23 0 0 1-.159-.036c-.189-.123-.128-.381-.107-.667a.03.03 0 0 0-.017-.031.04.04 0 0 0-.037 0q-.019.014-.03.05a6.4 6.4 0 0 1-.513 1.139m-.084-5.319a2.9 2.9 0 0 0-.776-1.696q-.213-.226-.912-.662c-.613-.383-1.06-.721-1.525-1.218a.14.14 0 0 0-.104-.046.14.14 0 0 0-.103.045c-.362.385-.475.948-.667 1.572-.062.204-.165.387-.398.354-.49-.07-.482-1.176-.44-1.528a.07.07 0 0 0-.017-.054.07.07 0 0 0-.052-.023.13.13 0 0 0-.083.032c-.155.133-.55.495-.8.534-.252.038-.338-.267-.304-.488q.056-.355.18-.752a.06.06 0 0 0-.082-.074 5.6 5.6 0 0 1-1.96.447.6.6 0 0 0-.13.02A3.15 3.15 0 0 0 7.254 9.09a.034.034 0 0 0 .034.051c.972-.164 2.249-.397 2.893.603.55.855.01 1.93-.947 2.12q-.313.064-1.132-.063a7 7 0 0 0-1.145-.08.054.054 0 0 0-.054.044l.001.026c.409 1.463 1.552 2.543 2.92 3.14 2.215.966 5.037.87 6.71-1.057a.06.06 0 0 0 .003-.073l-.02-.017c-.574-.308-1.284-.456-1.804-.644-.551-.2-.92-.717-.927-1.322-.014-1.137 1.166-1.718 2.159-1.287q.63.273 1.326.751a.03.03 0 0 0 .049-.029M9.568 10.11a.5.5 0 0 0-.283-.23.693.693 0 0 0-.88.897q.044.128.14.188c.046.03.102.038.158.024a.25.25 0 0 0 .143-.098c.187-.262.287-.381.666-.312a.173.173 0 0 0 .203-.161.17.17 0 0 0-.023-.094zm5.192 1.116c-.376.208-.494.751-.132 1.032a.17.17 0 0 0 .249-.038c.07-.102.163-.245.266-.302.102-.056.273-.06.397-.065a.17.17 0 0 0 .164-.19c-.045-.457-.568-.645-.944-.437"/>
+                    </svg>
+                  </span>
+                  <span class="logoloop__label">Unsloth</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    <!-- 05. EXPERIENCE SECTION -->
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-number mono">04.</span>
+        <h2 class="section-title">Experience &amp; Milestones</h2>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="glass-panel" style="padding: 24px;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <h3 style="font-size: 1.15rem; font-weight: 700;">B.E. Computer Science &amp; Engineering</h3>
+            <span class="mono" style="font-size: 0.8rem; color: var(--accent-cyan);">Present-2026</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px;">
+            Rigorous academic foundation in Data Structures, Advanced Algorithms, Operating Systems, Computer
+            Architecture, Object-Oriented Design, and Machine Learning Systems.
+          </p>
+          <div class="tag-row mono">
+            <span class="tag">Data Structures</span>
+            <span class="tag">Algorithms</span>
+            <span class="tag">Operating Systems</span>
+            <span class="tag">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. CONTACT & ENQUIRY SECTION -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-number mono">05.</span>
+        <h2 class="section-title">Get In Touch</h2>
+      </div>
+
+      <div class="contact-layout">
+        <!-- CRYSTAL BLACK LIQUID GLASS FORM CARD -->
+        <div class="glass-panel contact-form-card">
+          <div class="form-card-header">
+            <div class="form-badge mono">
+              <span class="badge-dot"></span>
+              DIRECT ENQUIRY DISPATCH
+            </div>
+            <h3 class="form-heading">Initiate Project &amp; Engineering Enquiry</h3>
+            <p class="form-subheading">
+              Have an engineering role, quantitative collaboration, or technical project in mind?
+            </p>
+          </div>
+
+          <!-- STATUS FEEDBACK BANNER (Screen-reader & visual announcement) -->
+          <div id="form-status-banner" class="form-status-banner" role="alert" aria-live="assertive" hidden></div>
+
+          <form id="contact-form"
+            action="https://script.google.com/macros/s/AKfycbwXd-nZH4nXIh46DeM-gjVrJpZwKHGRdV3lFuZriJWq2DWgvOVTC-qtcyjBASEXCNmt/exec"
+            method="POST" class="liquid-form" novalidate autocomplete="on">
+            <!-- Anti-Spam Honeypot Field (Hidden from humans & screen readers) -->
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="contact-hp-website">Do not fill this field</label>
+              <input type="text" id="contact-hp-website" name="_hp_website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- Form Load Timestamp for Anti-Bot Timing Verification -->
+            <input type="hidden" id="contact-form-timestamp" name="_form_load_time" value="">
+
+            <div class="form-grid">
+              <!-- FIELD 1: NAME -->
+              <div class="form-field-group" id="group-name">
+                <div class="field-label-row">
+                  <label for="field-name" class="form-label mono">Name</label>
+                  <span id="name-counter" class="field-counter mono" aria-hidden="true">0 / 100</span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="field-name" name="name" class="form-input" placeholder="Alex Turing"
+                    maxlength="100" autocomplete="name" spellcheck="false" aria-describedby="name-error"
+                    aria-invalid="false">
+                </div>
+                <div id="name-error" class="field-error" role="alert" aria-live="polite"></div>
+              </div>
+
+              <!-- FIELD 2: EMAIL ID -->
+              <div class="form-field-group" id="group-email">
+                <div class="field-label-row">
+                  <label for="field-email" class="form-label mono">Email ID</label>
+                  <span id="email-counter" class="field-counter mono" aria-hidden="true">0 / 254</span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" id="field-email" name="email" class="form-input" placeholder="alex@domain.com"
+                    maxlength="254" autocomplete="email" spellcheck="false" aria-describedby="email-error"
+                    aria-invalid="false">
+                </div>
+                <div id="email-error" class="field-error" role="alert" aria-live="polite"></div>
+              </div>
+
+              <!-- FIELD 3: SUBJECT / PROJECT ENQUIRY (FULL WIDTH) -->
+              <div class="form-field-group form-field-full" id="group-subject">
+                <div class="field-label-row">
+                  <label for="field-subject" class="form-label mono">Subject / Project Enquiry</label>
+                  <span id="subject-counter" class="field-counter mono" aria-hidden="true">0 / 200</span>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="field-subject" name="subject" class="form-input"
+                    placeholder="SDE Engineering / Quant Systems Collaboration" maxlength="200" spellcheck="true"
+                    aria-describedby="subject-error" aria-invalid="false">
+                </div>
+                <div id="subject-error" class="field-error" role="alert" aria-live="polite"></div>
+              </div>
+
+              <!-- FIELD 4: DESCRIPTION (FULL WIDTH) -->
+              <div class="form-field-group form-field-full" id="group-description">
+                <div class="field-label-row">
+                  <label for="field-description" class="form-label mono">Description</label>
+                  <span id="description-counter" class="field-counter mono" aria-hidden="true">0 / 5,000</span>
+                </div>
+                <div class="input-wrapper">
+                  <textarea id="field-description" name="description" class="form-textarea" rows="5"
+                    placeholder="Provide details regarding project scope, architecture requirements, role specifications, or timelines..."
+                    maxlength="5000" spellcheck="true" aria-describedby="description-error"
+                    aria-invalid="false"></textarea>
+                </div>
+                <div id="description-error" class="field-error" role="alert" aria-live="polite"></div>
+              </div>
+            </div>
+
+            <!-- FORM ACTIONS & DISPATCH BUTTON -->
+            <div class="form-actions-row">
+              <button type="submit" id="form-submit-btn" class="liquid-btn liquid-btn-primary form-submit-btn">
+                <span class="btn-spinner" aria-hidden="true">
+                  <svg class="spinner-svg" viewBox="0 0 24 24" fill="none">
+                    <circle class="spinner-track" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3">
+                    </circle>
+                    <path class="spinner-head" d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="3"
+                      stroke-linecap="round"></path>
+                  </svg>
+                </span>
+                <span class="btn-text">Submit Enquiry</span>
+                <span class="btn-arrow" aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MODERN MINIMALIST PORTFOLIO FOOTER (NITIN VR)
+       ========================================================================== -->
+  <footer class="portfolio-footer" id="portfolio-footer" role="contentinfo">
+    <!-- SECTION 1: MAIN FOOTER -->
+    <div class="footer-section footer-section--main">
+      <div class="footer-container footer-container--main">
+        <!-- 1. Centered Name -->
+        <a href="#home" class="footer-brand" title="Nitin VR — Back to Top" aria-label="Nitin VR — Back to top">
+          <span class="footer-brand__name">Nitin VR</span>
+        </a>
+
+        <!-- 2. Five Navigation Links (Horizontal Row) -->
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <ul class="footer-nav__list">
+            <li class="footer-nav__item">
+              <a href="#about" class="footer-nav__link">About</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#projects" class="footer-nav__link">Projects</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#skills" class="footer-nav__link">Skills</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#experience" class="footer-nav__link">Experience</a>
+            </li>
+            <li class="footer-nav__item">
+              <a href="#contact" class="footer-nav__link">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- 3. Four Social Media Icons (GitHub, X, Instagram, LinkedIn) -->
+        <div class="footer-socials footer-socials--center" aria-label="Social Profiles">
+          <!-- 1. GitHub -->
+          <a href="https://github.com/Nitin-VR" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="GitHub Profile" title="GitHub">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <!-- 2. X (Twitter) -->
+          <a href="https://x.com/Nitin_V_R" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="X (Twitter) Profile" title="X (Twitter)">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <!-- 3. Instagram -->
+          <a href="https://www.instagram.com/nitin._.vr/" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="Instagram Profile" title="Instagram">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <!-- 4. LinkedIn -->
+          <a href="https://www.linkedin.com/in/vrnitin/" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: COPYRIGHT FOOTER -->
+    <div class="footer-section footer-section--copyright">
+      <div class="footer-container footer-container--copyright">
+        <!-- Left: Nitin VR -->
+        <div class="footer-copy-left">
+          <a href="#home" class="footer-copy-brand__link" title="Nitin VR — Back to Top">Nitin VR</a>
+        </div>
+
+        <!-- Center: Copyright 2029© Nitin VR -->
+        <div class="footer-copy-center">
+          <p class="footer-copy-text">Copyright 2029© Nitin VR</p>
+        </div>
+
+        <!-- Right: Same 4 Social Media Icons (GitHub, X, Instagram, LinkedIn) -->
+        <div class="footer-copy-right" aria-label="Footer Social Links">
+          <!-- 1. GitHub -->
+          <a href="https://github.com/Nitin-VR" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="GitHub Profile" title="GitHub">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <!-- 2. X (Twitter) -->
+          <a href="https://x.com/Nitin_V_R" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="X (Twitter) Profile" title="X (Twitter)">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+          <!-- 3. Instagram -->
+          <a href="https://www.instagram.com/nitin._.vr/" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="Instagram Profile" title="Instagram">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <!-- 4. LinkedIn -->
+          <a href="https://www.linkedin.com/in/vrnitin/" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+            aria-label="LinkedIn Profile" title="LinkedIn">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION FOR ASYNC ACTIONS -->
+  <div id="toast" class="toast-notification" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-text">Enquiry logged successfully!</span>
+  </div>
+
+  <!-- JAVASCRIPT CONTROLLER -->
+  <script src="script.js"></script>
+</body>
+
+</html>

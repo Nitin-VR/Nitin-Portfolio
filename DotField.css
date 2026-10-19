@@ -1,0 +1,48 @@
+/* ==========================================================================
+   REACT BITS — DOTFIELD COMPONENT STYLES
+   ========================================================================== */
+
+.dot-field {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dot-field__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ==========================================================================
+   HERO AMBIENT DOTFIELD INTEGRATION
+   ========================================================================== */
+
+.hero-dotfield-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 600px;
+  max-width: 100vw;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 35%, #000 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 35%, #000 40%, transparent 95%);
+}
+
+.hero-dotfield-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.hero > *:not(.hero-dotfield-wrap) {
+  position: relative;
+  z-index: 1;
+}
