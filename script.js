@@ -23,11 +23,11 @@
     htmlRoot.setAttribute('data-theme', theme);
     localStorage.setItem(THEME_STORAGE_KEY, theme);
     
-    if (themeToggleBtn) {
-      const isDark = theme === 'dark';
-      themeToggleBtn.setAttribute('aria-label', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
-      themeToggleBtn.setAttribute('title', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
-    }
+    const isDark = theme === 'dark';
+    document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+      btn.setAttribute('aria-label', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
+      btn.setAttribute('title', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
+    });
     
     // Refresh GooeyNav palette if engine exists
     if (window.__gooeyNavEngine) {
@@ -48,13 +48,14 @@
   const initialTheme = getPreferredTheme();
   applyTheme(initialTheme);
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
+  // Attach click listener to all theme toggle buttons across desktop & mobile
+  document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
       const currentTheme = htmlRoot.getAttribute('data-theme') || 'dark';
       const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
       applyTheme(nextTheme);
     });
-  }
+  });
 
   if (window.matchMedia) {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -454,13 +455,22 @@ void main() {
       }
 
       const settledPill = boxes.length === 1 && !blobs.length;
-      if (settledPill) {
+      let pathStr = '';
+      if (settledPill && boxes[0]) {
         const box = boxes[0];
-        overlay.style.clipPath = `path('${pillPath(box.cx - box.hw, box.cy - box.hh, box.hw * 2, box.hh * 2)}')`;
+        pathStr = pillPath(box.cx - box.hw, box.cy - box.hh, box.hw * 2, box.hh * 2);
       } else {
-        overlay.style.clipPath = `path('${trace(boxes, blobs, smooth) || 'M0,0Z'}')`;
+        pathStr = trace(boxes, blobs, smooth) || '';
       }
-      overlay.style.visibility = 'visible';
+
+      if (pathStr) {
+        const clipVal = `path('${pathStr}')`;
+        overlay.style.clipPath = clipVal;
+        overlay.style.webkitClipPath = clipVal;
+        overlay.style.visibility = 'visible';
+      } else {
+        overlay.style.visibility = 'hidden';
+      }
 
       if (!pipeline || !gl) {
         const box = shape(target, 1);
@@ -720,11 +730,18 @@ void main() {
         if (navEl) {
           navEl.style.setProperty('--gn-pill', pillColor);
           navEl.style.setProperty('--gn-active-ink', theme === 'light' ? '#ffffff' : '#000000');
+          navEl.style.setProperty('--gn-ink', theme === 'light' ? '#09090b' : '#ffffff');
+          navEl.style.setProperty('--gn-muted', theme === 'light' ? '#18181b' : 'rgba(255,255,255,0.72)');
+          navEl.style.setProperty('--gn-frame', theme === 'light' ? 'rgba(255, 255, 255, 0.98)' : 'rgba(14, 14, 18, 0.72)');
+          navEl.style.setProperty('--gn-frame-edge', theme === 'light' ? 'rgba(0, 0, 0, 0.16)' : 'rgba(255, 255, 255, 0.12)');
         }
         render();
         wake();
       }
     };
+
+    // Apply active theme to GooeyNav engine immediately upon initialization
+    window.__gooeyNavEngine.setTheme(htmlRoot.getAttribute('data-theme') || 'dark');
 
     // Smoothly activate Home tab when clicking Nitin.VR brand
     const brandLink = document.getElementById('gooey-brand');
@@ -735,7 +752,7 @@ void main() {
     }
   }
 
-  // 3. Scrollspy Connection for GooeyNav (Sync with page sections)
+  // 3. Scrollspy Connection for GooeyNav & Mobile Sidebar (Sync with page sections)
   function initScrollspy() {
     const sectionIds = ['home', 'about', 'projects', 'skills', 'experience', 'contact'];
     const sectionElements = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
@@ -753,9 +770,122 @@ void main() {
       if (window.__gooeyNavEngine) {
         window.__gooeyNavEngine.go(activeIndex);
       }
+
+      // Sync active state on responsive mobile sidebar
+      const mobileLinks = document.querySelectorAll('.mobile-sidebar__link');
+      mobileLinks.forEach((link, index) => {
+        if (index === activeIndex) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // 3b. Responsive Mobile Sidebar Controller (Phone Alone)
+  function initMobileNav() {
+    const toggleBtn = document.getElementById('mobile-nav-toggle');
+    const closeBtn = document.getElementById('mobile-sidebar-close');
+    const sidebar = document.getElementById('mobile-sidebar');
+    const backdrop = document.getElementById('mobile-sidebar-backdrop');
+    const mobileLinks = document.querySelectorAll('.mobile-sidebar__link');
+    const brandLink = document.getElementById('mobile-sidebar-brand');
+
+    if (!sidebar || !toggleBtn) return;
+
+    function openSidebar() {
+      sidebar.classList.add('is-open');
+      if (backdrop) backdrop.classList.add('is-open');
+      toggleBtn.classList.add('is-active');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      sidebar.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('mobile-nav-open');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('is-open');
+      if (backdrop) backdrop.classList.remove('is-open');
+      toggleBtn.classList.remove('is-active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      sidebar.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('mobile-nav-open');
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = sidebar.classList.contains('is-open');
+      if (isOpen) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeSidebar);
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', closeSidebar);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar.classList.contains('is-open')) {
+        closeSidebar();
+      }
+    });
+
+    // Close sidebar on link click & smooth scroll to target
+    const navMapping = {
+      '#home': 0,
+      '#about': 1,
+      '#projects': 2,
+      '#skills': 3,
+      '#experience': 4,
+      '#contact': 5
+    };
+
+    function handleLinkClick(e, link) {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        const targetEl = document.querySelector(href);
+        if (targetEl) {
+          e.preventDefault();
+          closeSidebar();
+          
+          setTimeout(() => {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+            history.pushState(null, '', href);
+            if (window.__gooeyNavEngine && navMapping[href] !== undefined) {
+              window.__gooeyNavEngine.go(navMapping[href]);
+            }
+          }, 120);
+        }
+      }
+    }
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', (e) => handleLinkClick(e, link));
+    });
+
+    if (brandLink) {
+      brandLink.addEventListener('click', (e) => handleLinkClick(e, brandLink));
+    }
+
+    const ctaBtn = document.querySelector('.mobile-sidebar__cta-btn');
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', (e) => handleLinkClick(e, ctaBtn));
+    }
+
+    // Auto-close if screen is resized wider than 768px (phone breakpoint)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && sidebar.classList.contains('is-open')) {
+        closeSidebar();
+      }
+    });
   }
 
   // 4. Dynamic Crystal Glass Specular Spotlight (Card Hover Effect)
@@ -2333,6 +2463,7 @@ void main() {
 
     initIntroAnimation();
     initGooeyNav();
+    initMobileNav();
     initScrollspy();
     initGlassSpotlight();
     initContactForm();
